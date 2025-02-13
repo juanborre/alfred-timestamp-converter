@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>timestamp-convert</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>B8474AF8-E892-40C3-8A1A-4A6B9A00F007</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2142C93-EBC4-44E4-88A6-F9CA0A236D90</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E996A9C3-A3E0-4A1D-B27B-EA49BC1EC812</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8474AF8-E892-40C3-8A1A-4A6B9A00F007</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>juanborre</string>
+	<key>description</key>
+	<string>Converts a timestamp into human readable form</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Timestamp converter</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>17</integer>
+				<key>hotmod</key>
+				<integer>524288</integer>
+				<key>hotstring</key>
+				<string>T</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E996A9C3-A3E0-4A1D-B27B-EA49BC1EC812</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>timestamp</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./convert.sh $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Convert timestamp to human readable form</string>
+				<key>type</key>
+				<integer>11</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B8474AF8-E892-40C3-8A1A-4A6B9A00F007</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C2142C93-EBC4-44E4-88A6-F9CA0A236D90</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># alfred-timestamp-converter
+
+Alfred workflow to convert a timestamp in human readable format and how much time ago it was.
+
+Use it by typing `timestamp &lt;VALUE&gt;` in Alfred.
+
+Time is displayed in the local timezone and UTC.
+
+Alternatively, you can select and highlight a timestamp in any application and use the hotkey `Option + t` to convert it.
+
+If you type `Intro` while highlighting a converted string, it will be copied to the clipboard.
+
+![Convert timestamp](./convert-timestamp.jpg)
+
+## Installation
+
+Download the latest version from the [releases page](https://github.com/juanborre/alfred-timestamp-converter/releases)
+and double click the `Timestamp.converter.alfredworkflow` file.</string>
+	<key>uidata</key>
+	<dict>
+		<key>B8474AF8-E892-40C3-8A1A-4A6B9A00F007</key>
+		<dict>
+			<key>xpos</key>
+			<real>280</real>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>C2142C93-EBC4-44E4-88A6-F9CA0A236D90</key>
+		<dict>
+			<key>xpos</key>
+			<real>470</real>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>E996A9C3-A3E0-4A1D-B27B-EA49BC1EC812</key>
+		<dict>
+			<key>xpos</key>
+			<real>85</real>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/juanborre/alfred-timestamp-converter</string>
+</dict>
+</plist>
