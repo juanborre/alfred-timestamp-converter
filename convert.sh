@@ -3,7 +3,16 @@
 query=$1
 
 current_time=$(date +%s)
-seconds_ago=$((current_time - $query))
+seconds_ago=$((query - current_time))
+
+# Determine if the timestamp is in the past or future
+if [[ $seconds_ago -lt 0 ]]; then
+direction="ago"
+# Convert to positive for calculations
+seconds_ago=$((seconds_ago * -1))
+else
+direction="in the future"
+fi
 
 days=$((seconds_ago / 86400))
 remaining_seconds=$((seconds_ago % 86400))
@@ -38,8 +47,8 @@ cat << EOB
 		"arg": "$(TZ=UTC date -ur $query +"%Y-%m-%dT%H:%M:%S") UTC"
 	},
 	{
-		"title": "$output ago",
-		"arg": "$output ago"
+		"title": "$output $direction",
+		"arg": "$output $direction"
 	}
 ]}
 EOB
